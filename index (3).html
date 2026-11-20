@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABHYASA YOGA – HATHA &amp; ASHTANGA YOGA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{--terre:#8a5a44;--sable:#f6efe6;--sauge:#7d8f69;--nuit:#2f2a26;--or:#c99a4b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Lato,sans-serif;color:var(--nuit);background:var(--sable);line-height:1.6}
+h1,h2,h3{font-family:'Cormorant Garamond',serif}
+nav{position:sticky;top:0;background:rgba(246,239,230,.96);display:flex;justify-content:space-between;align-items:center;padding:.8rem 5%;z-index:10;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+nav .logo{display:flex;align-items:center;gap:.55rem;letter-spacing:2px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--terre);font-weight:700}
+nav ul{list-style:none;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none;color:var(--nuit);font-size:.95rem}
+nav a:hover{color:var(--terre)}
+header{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:2rem;background-size:cover;background-position:center}
+.lotus{width:44px;height:28px;color:var(--or);flex-shrink:0}
+.brand{display:flex;flex-direction:column;align-items:center;margin-bottom:1.2rem}
+.brand .lotus{width:110px;height:70px;color:#f3d9a4}
+.brand span{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2rem);letter-spacing:8px;color:#f3d9a4;font-weight:700}
+header h1{font-size:clamp(2.3rem,6vw,4.5rem);letter-spacing:2px}
+header p{font-size:1.2rem;max-width:640px;margin:1rem 0 2rem}
+.btn{background:var(--terre);color:#fff;border:none;padding:.75rem 1.6rem;border-radius:30px;cursor:pointer;font-size:1rem;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--or)}
+.btn.sm{padding:.4rem .9rem;font-size:.85rem}
+.btn.vert{background:var(--sauge)}.btn.rouge{background:#b5523b}.btn.gris{background:#8d847c}
+section{padding:4.5rem 5%}
+section h2{font-size:2.5rem;text-align:center;color:var(--terre);margin-bottom:.5rem}
+.sub{text-align:center;max-width:700px;margin:0 auto 2.5rem;color:#6b625b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem}
+.card{background:#fff;border-radius:14px;padding:1.6rem;box-shadow:0 4px 18px rgba(0,0,0,.06)}
+.card h3{font-size:1.6rem;color:var(--terre)}
+.alt{background:#fff}.alt .card{background:var(--sable)}
+.map{width:100%;height:220px;border:0;border-radius:10px;margin-top:1rem}
+.tag{display:inline-block;padding:.2rem .7rem;border-radius:20px;font-size:.8rem;background:var(--sauge);color:#fff}
+.price{font-size:2.2rem;font-family:'Cormorant Garamond',serif;color:var(--terre);font-weight:700}
+.card ul{margin:1rem 0 1.5rem 1.2rem}
+.featured{border:2px solid var(--or);transform:scale(1.03)}
+.prof{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:3rem;align-items:center;max-width:1050px;margin:auto}
+.prof img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:200px 200px 14px 14px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.prof .kicker{text-transform:uppercase;letter-spacing:3px;color:var(--sauge);font-size:.85rem;font-weight:700}
+.prof h2{text-align:left;margin:.2rem 0 1rem}
+.prof p.txt{white-space:pre-line;margin-bottom:1.2rem}
+.prof blockquote{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:var(--terre);border-left:3px solid var(--or);padding-left:1rem;margin:1.2rem 0}
+.puces{display:flex;flex-wrap:wrap;gap:.5rem}
+.puces span{background:var(--sable);border:1px solid #e3d8cc;border-radius:20px;padding:.3rem .9rem;font-size:.85rem}
+@media(max-width:760px){.prof{grid-template-columns:1fr}.prof img{max-width:300px;margin:auto}.prof h2{text-align:center}}
+form.pub{max-width:650px;margin:auto;background:#fff;padding:2rem;border-radius:14px;box-shadow:0 4px 18px rgba(0,0,0,.06);display:grid;gap:1rem}
+label{font-weight:700;font-size:.9rem}
+input,select,textarea{width:100%;padding:.6rem;border:1px solid #d9cfc4;border-radius:8px;font:inherit;background:#fff}
+.msg{display:none;background:var(--sauge);color:#fff;padding:1rem;border-radius:8px;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.gallery figure{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.07)}
+.gallery img{width:100%;height:220px;object-fit:cover;display:block}
+.gallery figcaption{padding:.6rem .8rem;font-size:.9rem}
+.gallery figcaption b{color:var(--terre)}
+footer{background:var(--nuit);color:#ddd;text-align:center;padding:2rem;font-size:.9rem}
+footer a{color:var(--or)}
+.cal-nav{display:flex;justify-content:center;align-items:center;gap:1rem;margin-bottom:1rem}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;max-width:900px;margin:auto}
+.cal div{background:var(--sable);min-height:80px;border-radius:6px;padding:4px;font-size:.75rem}
+.cal .hd{background:var(--terre);color:#fff;min-height:auto;text-align:center;font-weight:700}
+.cal .off{background:#e9e2da;color:#999}
+.cal .ev{display:block;margin-top:2px;padding:2px 4px;border-radius:4px;color:#fff;animation:apparait .25s ease}
+@keyframes apparait{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+/* Boutons de filtre du calendrier */
+.filtres{display:flex;justify-content:center;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+.filtre{--c:var(--sauge);display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.2rem;border-radius:30px;border:2px solid var(--c);background:var(--c);color:#fff;font:700 .95rem Lato,sans-serif;cursor:pointer;transition:all .2s}
+.filtre::before{content:'✓';display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.3);font-size:.75rem}
+.filtre:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.filtre.inactif{background:#fff;color:var(--c);opacity:.7}
+.filtre.inactif::before{content:'';background:none;border:2px solid var(--c)}
+.filtres-aide{text-align:center;font-size:.8rem;color:#8d847c;margin-top:.5rem}
+@media(max-width:700px){nav ul li:not(.adm){display:none}.cal div{min-height:55px;font-size:.6rem}}
+
+/* ===== ADMIN ===== */
+.overlay{position:fixed;inset:0;background:rgba(47,42,38,.6);display:none;z-index:100;align-items:center;justify-content:center;padding:1rem}
+.overlay.open{display:flex}
+.login{background:#fff;padding:2rem;border-radius:14px;width:340px;display:grid;gap:1rem;text-align:center}
+.panel{background:#fff;width:min(1100px,100%);height:min(90vh,800px);border-radius:14px;display:flex;overflow:hidden}
+.side{background:var(--nuit);color:#fff;width:210px;padding:1rem 0;display:flex;flex-direction:column;flex-shrink:0}
+.side h3{padding:0 1rem 1rem;color:var(--or)}
+.side button{background:none;border:none;color:#ddd;text-align:left;padding:.75rem 1rem;cursor:pointer;font-size:.95rem}
+.side button.act,.side button:hover{background:rgba(255,255,255,.1);color:#fff}
+.side .bas{margin-top:auto}
+.main{flex:1;overflow:auto;padding:1.5rem 2rem}
+.main h2{font-size:2rem;color:var(--terre);text-align:left;margin-bottom:.3rem}
+.main .aide{color:#7a716a;margin-bottom:1.3rem;font-size:.9rem}
+.bloc{background:var(--sable);border-radius:10px;padding:1rem;margin-bottom:1rem}
+.row{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));align-items:end;margin-bottom:.6rem}
+.row label{font-size:.78rem;font-weight:700;display:block}
+.ligne{display:flex;gap:.5rem;align-items:center;margin-bottom:.5rem}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--sauge);color:#fff;padding:.8rem 1.3rem;border-radius:8px;z-index:200;display:none}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.8rem}
+.thumbs div{background:var(--sable);border-radius:8px;overflow:hidden;font-size:.8rem}
+.thumbs img{width:100%;height:120px;object-fit:cover;display:block}
+.thumbs p{padding:.4rem}
+.badge{background:#b5523b;color:#fff;border-radius:10px;padding:0 .5rem;font-size:.75rem;margin-left:.3rem}
+@media(max-width:700px){.panel{flex-direction:column}.side{width:100%;flex-direction:row;overflow-x:auto;padding:0}.side h3,.side .bas{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" id="logo"><svg class="lotus" viewBox="0 0 64 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M32 4c-6 7-6 20 0 28 6-8 6-21 0-28z"></path><path d="M32 32c-4-9-11-15-19-16 0 9 8 16 19 16z"></path><path d="M32 32c4-9 11-15 19-16 0 9-8 16-19 16z"></path><path d="M32 32C25 27 13 25 4 28c7 5 18 6 28 4z"></path><path d="M32 32c7-5 19-7 28-4-7 5-18 6-28 4z"></path><path d="M14 36h36" stroke-linecap="round"></path></g></svg><span>ABHYASA YOGA</span></div>
+  <ul>
+    <li><a href="#professeure">Ombline</a></li>
+    <li><a href="#cours">Cours</a></li>
+    <li><a href="#calendrier">Calendrier</a></li>
+    <li><a href="#ateliers">Ateliers</a></li>
+    <li><a href="#forfaits">Forfaits</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#inscription">Inscription</a></li>
+    <li class="adm"><a href="#" onclick="ouvrirAdmin();return false" title="Espace administrateur">🔒</a></li>
+  </ul>
+</nav>
+
+<header id="hero" style="background-image: linear-gradient(rgba(47, 42, 38, 0.45), rgba(47, 42, 38, 0.45)), url(&quot;https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&quot;);">
+  <div class="brand" id="heroBrand"><svg class="lotus" viewBox="0 0 64 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M32 4c-6 7-6 20 0 28 6-8 6-21 0-28z"></path><path d="M32 32c-4-9-11-15-19-16 0 9 8 16 19 16z"></path><path d="M32 32c4-9 11-15 19-16 0 9-8 16-19 16z"></path><path d="M32 32C25 27 13 25 4 28c7 5 18 6 28 4z"></path><path d="M32 32c7-5 19-7 28-4-7 5-18 6-28 4z"></path><path d="M14 36h36" stroke-linecap="round"></path></g></svg><span>ABHYASA YOGA</span></div>
+  <h1 id="heroTitre">HATHA &amp; ASHTANGA YOGA</h1>
+  <p id="heroSous">Souffle, mouvement et présence. 
+Cours collectifs à Thairé (17) et Merpins (16), tous niveaux.</p>
+  <a href="#inscription" class="btn">Je m'inscris</a>
+</header>
+
+<section id="professeure" class="alt">
+  <div class="prof">
+    <img id="profPhoto" alt="Portrait de la professeure" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=700">
+    <div>
+      <div class="kicker">Votre professeure</div>
+      <h2 id="profNom">Ombline</h2>
+      <p class="txt" id="profTexte">Passionnée de yoga depuis de nombreuses années, je partage aujourd'hui ma pratique du Hatha et de l'Ashtanga avec bienveillance et exigence.
+
+Mes cours sont ouverts à tous : chacun avance à son rythme, dans le respect de son corps, en reliant le souffle au mouvement pour retrouver énergie, souplesse et sérénité.</p>
+      <blockquote id="profCitation">« Le yoga ne consiste pas à toucher ses orteils, mais à ce que l'on apprend en chemin. »</blockquote>
+      <div class="puces" id="profFormations"><span>Professeure de Hatha &amp; Ashtanga Yoga</span><span>Cours tous niveaux</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cours">
+  <h2>Les cours</h2>
+  <p class="sub" id="intro">Hatha pour l'ancrage et la douceur, Ashtanga pour le dynamisme : deux pratiques complémentaires qui relient respiration et postures. Chaque séance s'adapte au niveau de chacun.</p>
+  <div class="grid" id="lieuxCards"><div class="card">
+    <span class="tag" style="background:#7d8f69">Charente-Maritime</span>
+    <h3>Thairé</h3><p><b>Salle polyvalente</b><br>17290 Thairé</p>
+    <p style="margin-top:.8rem">📅 <b>Lundi</b> – 10h00 à 11h15<br>📅 <b>Mercredi</b> – 10h00 à 11h15</p>
+    <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=Salle%20polyvalente%2017290%20Thair%C3%A9&amp;z=14&amp;output=embed"></iframe>
+  </div><div class="card">
+    <span class="tag" style="background:#c99a4b">Charente</span>
+    <h3>Merpins</h3><p><b>Salle des associations</b><br>16100 Merpins</p>
+    <p style="margin-top:.8rem">📅 <b>Lundi</b> – 18h00 à 19h00</p>
+    <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=Salle%20des%20associations%2016100%20Merpins&amp;z=14&amp;output=embed"></iframe>
+  </div></div>
+  <div class="grid" style="margin-top:1.5rem">
+    <div class="card"><h3>À apporter</h3><ul id="apporter"><li>Votre tapis de yoga</li><li>Une tenue souple</li><li>Une couverture / un plaid</li></ul></div>
+  </div>
+</section>
+
+<section id="calendrier" class="alt">
+  <h2>Calendrier</h2>
+  <p class="sub">Cours réguliers et ateliers du mois.</p>
+  <div class="cal-nav">
+    <button class="btn" onclick="chgMois(-1)">‹</button>
+    <h3 id="mois" style="min-width:200px;text-align:center;font-size:1.6rem">décembre 2026</h3>
+    <button class="btn" onclick="chgMois(1)">›</button>
+  </div>
+  <div class="cal" id="cal"><div class="hd">Lun</div><div class="hd">Mar</div><div class="hd">Mer</div><div class="hd">Jeu</div><div class="hd">Ven</div><div class="hd">Sam</div><div class="hd">Dim</div><div style="background:transparent"></div><div class=""><b>1</b></div><div class=""><b>2</b><span class="ev" style="background:#7d8f69">Thairé 10h00</span></div><div class=""><b>3</b></div><div class=""><b>4</b></div><div class=""><b>5</b></div><div class=""><b>6</b></div><div class=""><b>7</b><span class="ev" style="background:#7d8f69">Thairé 10h00</span><span class="ev" style="background:#c99a4b">Merpins 18h00</span></div><div class=""><b>8</b></div><div class=""><b>9</b><span class="ev" style="background:#7d8f69">Thairé 10h00</span></div><div class=""><b>10</b></div><div class=""><b>11</b></div><div class=""><b>12</b></div><div class=""><b>13</b></div><div class=""><b>14</b><span class="ev" style="background:#7d8f69">Thairé 10h00</span><span class="ev" style="background:#c99a4b">Merpins 18h00</span></div><div class=""><b>15</b></div><div class=""><b>16</b><span class="ev" style="background:#7d8f69">Thairé 10h00</span></div><div class=""><b>17</b></div><div class=""><b>18</b></div><div class=""><b>19</b></div><div class=""><b>20</b></div><div class=""><b>21</b><span class="ev" style="background:#7d8f69">Thairé 10h00</span><span class="ev" style="background:#c99a4b">Merpins 18h00</span></div><div class=""><b>22</b></div><div class=""><b>23</b><span class="ev" style="background:#7d8f69">Thairé 10h00</span><span class="ev" style="background:var(--terre)">🧘 Nude Yoga</span></div><div class="off"><b>24</b><small>🏖️ Vacances de Noël</small></div><div class="off"><b>25</b><small>🏖️ Vacances de Noël</small></div><div class="off"><b>26</b><small>🏖️ Vacances de Noël</small></div><div class="off"><b>27</b><small>🏖️ Vacances de Noël</small></div><div class="off"><b>28</b><small>🏖️ Vacances de Noël</small></div><div class="off"><b>29</b><small>🏖️ Vacances de Noël</small></div><div class="off"><b>30</b><small>🏖️ Vacances de Noël</small></div><div class="off"><b>31</b><small>🏖️ Vacances de Noël</small></div></div>
+  <div class="filtres" id="filtres"><button type="button" class="filtre " style="--c:#7d8f69" aria-pressed="true" data-cle="lieu:Thairé">Thairé</button><button type="button" class="filtre " style="--c:#c99a4b" aria-pressed="true" data-cle="lieu:Merpins">Merpins</button><button type="button" class="filtre " style="--c:#8a5a44" aria-pressed="true" data-cle="atelier">Ateliers</button></div>
+  <p class="filtres-aide">Cliquez sur un bouton pour afficher ou masquer ces séances dans le calendrier.</p>
+</section>
+
+<section id="ateliers">
+  <h2>Ateliers partagés</h2>
+  <p class="sub">Des rencontres avec d'autres intervenants pour explorer le yoga autrement : voix, sons, vibrations.</p>
+  <div class="grid" id="listeAteliers"><div class="card">
+    <div style="font-size:2.5rem">🧘</div><h3>Nude Yoga</h3>
+    <p>📅 mercredi 23 décembre 2026<br>🕑 <br>📍 Thairé<br>🤝 avec <br>💶 100€</p><br>
+    <a href="#inscription" class="btn" onclick="reserver(0)">Réserver</a></div></div>
+</section>
+
+<section id="forfaits" class="alt">
+  <h2>Forfaits</h2>
+  <p class="sub">&nbsp;</p>
+  <div class="grid" id="listeForfaits"><div class="card ">
+    <h3>Cours à l'unité</h3><p class="price">15 €</p>
+    <ul><li>Accès à 1 cours</li><li>Tous les lieux</li></ul>
+    <a href="#inscription" class="btn" onclick="$('iForfait').value=this.dataset.f" data-f="Cours à l'unité">Choisir</a></div><div class="card featured">
+    <h3>Carte 10 cours</h3><p class="price">120 €</p>
+    <ul><li>Valable 4 mois</li><li>Tous les lieux</li></ul>
+    <a href="#inscription" class="btn" onclick="$('iForfait').value=this.dataset.f" data-f="Carte 10 cours">Choisir</a></div></div>
+</section>
+
+<section id="galerie">
+  <h2>Galerie des élèves</h2>
+  <p class="sub">Partagez votre plus belle posture ! Les photos sont publiées après validation.</p>
+  <div class="gallery" id="gallery"><figure><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600" alt="Pratique en groupe"><figcaption><b>Pratique en groupe</b><br>par Le groupe</figcaption></figure><figure><img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600" alt="Salutation au soleil"><figcaption><b>Salutation au soleil</b><br>par Cours</figcaption></figure><figure><img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600" alt="Posture de l'arbre"><figcaption><b>Posture de l'arbre</b><br>par Cours</figcaption></figure></div>
+  <form class="pub" id="formPhoto" style="margin-top:2.5rem">
+    <h3 style="color:var(--terre)">Partager ma posture</h3>
+    <div><label>Prénom</label><input id="pPrenom" required=""></div>
+    <div><label>Nom de la posture</label><input id="pPosture" placeholder="ex : Natarajasana" required=""></div>
+    <div><label>Photo</label><input type="file" id="pFile" accept="image/*" required=""></div>
+    <label style="font-weight:400"><input type="checkbox" required="" style="width:auto"> J'autorise la publication de cette photo sur le site.</label>
+    <button class="btn">Envoyer</button>
+    <div class="msg" id="msgPhoto">Merci 🙏 Votre photo sera publiée après validation.</div>
+  </form>
+</section>
+
+<section id="inscription" class="alt">
+  <h2>Inscription</h2>
+  <p class="sub">Remplissez le formulaire, je vous recontacte pour confirmer votre place.</p>
+  <form class="pub" id="formInscr">
+    <div><label>Nom et prénom</label><input id="iNom" required=""></div>
+    <div><label>E-mail</label><input type="email" id="iMail" required=""></div>
+    <div><label>Téléphone</label><input type="tel" id="iTel"></div>
+    <div><label>Cours souhaité</label><select id="iCours" required=""><option>Thairé – Lundi 10h00-11h15</option><option>Thairé – Mercredi 10h00-11h15</option><option>Merpins – Lundi 18h00-19h00</option><option>Atelier partagé</option></select></div>
+    <div><label>Forfait</label><select id="iForfait"><option>Cours à l'unité</option><option>Carte 10 cours</option></select></div>
+    <div><label>Niveau</label><select id="iNiv"><option>Débutant</option><option>Intermédiaire</option><option>Confirmé</option></select></div>
+    <div><label>Message (santé, blessures, questions…)</label><textarea id="iMsg" rows="3"></textarea></div>
+    <button class="btn">Envoyer mon inscription</button>
+    <div class="msg" id="msgInscr">Merci ! Votre messagerie va s'ouvrir pour finaliser l'envoi.</div>
+  </form>
+</section>
+
+<footer>
+  <p id="footTitre">🪷 ABHYASA YOGA – HATHA &amp; ASHTANGA YOGA – Ombline – Thairé &amp; Merpins</p>
+  <p id="footContact">📧 abhyasa.yoga17@gmail.com · 📞 06 67 15 59 93</p>
+  <p style="margin-top:.6rem"><a href="#" onclick="ouvrirAdmin();return false">🔒 Espace administrateur</a></p>
+</footer>
+
+<div class="overlay" id="ovLogin">
+  <form class="login" onsubmit="connexion(event)">
+    <h3 style="color:var(--terre);font-size:1.6rem">Espace administrateur</h3>
+    <input type="password" id="mdp" placeholder="Mot de passe" autocomplete="current-password">
+    <button class="btn">Se connecter</button>
+    <button type="button" class="btn gris" onclick="fermer('ovLogin')">Annuler</button>
+    <small style="color:#999">Mot de passe initial : yoga2026</small>
+  </form>
+</div>
+
+<div class="overlay" id="ovAdmin">
+  <div class="panel">
+    <div class="side" id="side">
+      <h3>⚙️ Administration</h3>
+      <button data-tab="general" class="">🏠 Général</button>
+      <button data-tab="prof">👩 Professeure</button>
+      <button data-tab="lieux">📍 Lieux &amp; horaires</button>
+      <button data-tab="apporter">🧘 À apporter</button>
+      <button data-tab="ateliers" class="">🎶 Ateliers</button>
+      <button data-tab="forfaits">💶 Forfaits</button>
+      <button data-tab="vacances">🏖️ Fermetures</button>
+      <button data-tab="galerie">📷 Galerie <span id="nbAttente"></span></button>
+      <button data-tab="sauvegarde" class="act">💾 Sauvegarde</button>
+      <div class="bas"><button onclick="fermer('ovAdmin')">✖ Fermer et voir le site</button></div>
+    </div>
+    <div class="main" id="adminBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" style="display: none;">✔ Modification enregistrée</div>
+
+<script type="application/json" id="cfg">
+{
+ "site": {
+  "entreprise": "ABHYASA YOGA",
+  "titre": "HATHA & ASHTANGA YOGA",
+  "sousTitre": "Souffle, mouvement et présence. \nCours collectifs à Thairé (17) et Merpins (16), tous niveaux.",
+  "intro": "Hatha pour l'ancrage et la douceur, Ashtanga pour le dynamisme : deux pratiques complémentaires qui relient respiration et postures. Chaque séance s'adapte au niveau de chacun.",
+  "email": "abhyasa.yoga17@gmail.com",
+  "tel": "06 67 15 59 93",
+  "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600",
+  "motdepasse": "yoga2026"
+ },
+ "prof": {
+  "nom": "Ombline",
+  "photo": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=700",
+  "texte": "Passionnée de yoga depuis de nombreuses années, je partage aujourd'hui ma pratique du Hatha et de l'Ashtanga avec bienveillance et exigence.\n\nMes cours sont ouverts à tous : chacun avance à son rythme, dans le respect de son corps, en reliant le souffle au mouvement pour retrouver énergie, souplesse et sérénité.",
+  "citation": "Le yoga ne consiste pas à toucher ses orteils, mais à ce que l'on apprend en chemin.",
+  "formations": "Professeure de Hatha & Ashtanga Yoga\nCours tous niveaux"
+ },
+ "lieux": [
+  {
+   "nom": "Thairé",
+   "salle": "Salle polyvalente",
+   "adresse": "17290 Thairé",
+   "region": "Charente-Maritime",
+   "couleur": "#7d8f69",
+   "creneaux": [
+    {
+     "jour": 1,
+     "debut": "10:00",
+     "fin": "11:15"
+    },
+    {
+     "jour": 3,
+     "debut": "10:00",
+     "fin": "11:15"
+    }
+   ]
+  },
+  {
+   "nom": "Merpins",
+   "salle": "Salle des associations",
+   "adresse": "16100 Merpins",
+   "region": "Charente",
+   "couleur": "#c99a4b",
+   "creneaux": [
+    {
+     "jour": 1,
+     "debut": "18:00",
+     "fin": "19:00"
+    }
+   ]
+  }
+ ],
+ "apporter": [
+  "Votre tapis de yoga",
+  "Une tenue souple",
+  "Une couverture / un plaid"
+ ],
+ "ateliers": [
+  {
+   "icone": "🧘",
+   "titre": "Nude Yoga",
+   "date": "2026-12-23",
+   "heure": "",
+   "lieu": "Thairé",
+   "avec": "",
+   "prix": "100€"
+  }
+ ],
+ "forfaits": [
+  {
+   "nom": "Cours à l'unité",
+   "prix": "15 €",
+   "details": "Accès à 1 cours\nTous les lieux",
+   "vedette": false
+  },
+  {
+   "nom": "Carte 10 cours",
+   "prix": "120 €",
+   "details": "Valable 4 mois\nTous les lieux",
+   "vedette": true
+  }
+ ],
+ "vacances": [
+  {
+   "du": "2026-12-24",
+   "au": "2027-01-03",
+   "motif": "Vacances de Noël"
+  }
+ ],
+ "galerie": [
+  {
+   "src": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600",
+   "prenom": "Le groupe",
+   "posture": "Pratique en groupe"
+  },
+  {
+   "src": "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600",
+   "prenom": "Cours",
+   "posture": "Salutation au soleil"
+  },
+  {
+   "src": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600",
+   "prenom": "Cours",
+   "posture": "Posture de l'arbre"
+  }
+ ],
+ "attente": []
+}
+</script>
+
+<script>
+const JOURS=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const DEFAUT=JSON.parse(document.getElementById('cfg').textContent);
+let CFG = JSON.parse(localStorage.getItem('yogaCfg') || JSON.stringify(DEFAUT));
+if(!CFG.prof) CFG.prof=DEFAUT.prof;
+if(!CFG.site.entreprise) CFG.site.entreprise=DEFAUT.site.entreprise;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const LOTUS=`<svg class="lotus" viewBox="0 0 64 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M32 4c-6 7-6 20 0 28 6-8 6-21 0-28z"/><path d="M32 32c-4-9-11-15-19-16 0 9 8 16 19 16z"/><path d="M32 32c4-9 11-15 19-16 0 9-8 16-19 16z"/><path d="M32 32C25 27 13 25 4 28c7 5 18 6 28 4z"/><path d="M32 32c7-5 19-7 28-4-7 5-18 6-28 4z"/><path d="M14 36h36" stroke-linecap="round"/></g></svg>`;
+const hh=t=>t.replace(':','h');
+
+/* Filtres du calendrier : éléments masqués */
+const MASQUES=new Set();
+function basculer(cle){MASQUES.has(cle)?MASQUES.delete(cle):MASQUES.add(cle);drawFiltres();drawCal();}
+function drawFiltres(){
+  const items=CFG.lieux.map(l=>({cle:'lieu:'+l.nom,lib:l.nom,c:l.couleur}));
+  items.push({cle:'atelier',lib:'Ateliers',c:'#8a5a44'});
+  $('filtres').innerHTML=items.map(i=>`<button type="button" class="filtre ${MASQUES.has(i.cle)?'inactif':''}" style="--c:${i.c}" aria-pressed="${!MASQUES.has(i.cle)}" data-cle="${esc(i.cle)}">${esc(i.lib)}</button>`).join('');
+}
+$('filtres').onclick=e=>{const b=e.target.closest('.filtre');if(b)basculer(b.dataset.cle);};
+
+/* ================= AFFICHAGE DU SITE ================= */
+function renderSite(){
+  const s=CFG.site,p=CFG.prof;
+  document.title=s.entreprise+' – '+s.titre;
+  $('logo').innerHTML=LOTUS+'<span>'+esc(s.entreprise)+'</span>';
+  $('heroBrand').innerHTML=LOTUS+'<span>'+esc(s.entreprise)+'</span>';
+  $('heroTitre').textContent=s.titre;
+  $('heroSous').textContent=s.sousTitre; $('intro').textContent=s.intro;
+  $('hero').style.backgroundImage=`linear-gradient(rgba(47,42,38,.45),rgba(47,42,38,.45)),url('${s.image}')`;
+  $('footTitre').textContent='🪷 '+s.entreprise+' – '+s.titre+' – '+p.nom+' – '+CFG.lieux.map(l=>l.nom).join(' & ');
+  $('footContact').textContent='📧 '+s.email+' · 📞 '+s.tel;
+
+  $('profPhoto').src=p.photo; $('profNom').textContent=p.nom; $('profTexte').textContent=p.texte;
+  $('profCitation').textContent=p.citation?'« '+p.citation+' »':''; $('profCitation').style.display=p.citation?'':'none';
+  $('profFormations').innerHTML=p.formations.split('\n').filter(x=>x.trim()).map(x=>`<span>${esc(x)}</span>`).join('');
+
+  $('lieuxCards').innerHTML=CFG.lieux.map(l=>`<div class="card">
+    <span class="tag" style="background:${l.couleur}">${esc(l.region)}</span>
+    <h3>${esc(l.nom)}</h3><p><b>${esc(l.salle)}</b><br>${esc(l.adresse)}</p>
+    <p style="margin-top:.8rem">${l.creneaux.map(c=>`📅 <b>${JOURS[c.jour]}</b> – ${hh(c.debut)} à ${hh(c.fin)}`).join('<br>')}</p>
+    <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=${encodeURIComponent(l.salle+' '+l.adresse)}&z=14&output=embed"></iframe>
+  </div>`).join('');
+  $('apporter').innerHTML=CFG.apporter.map(a=>`<li>${esc(a)}</li>`).join('');
+
+  $('listeAteliers').innerHTML=CFG.ateliers.length?CFG.ateliers.map((a,i)=>`<div class="card">
+    <div style="font-size:2.5rem">${esc(a.icone)}</div><h3>${esc(a.titre)}</h3>
+    <p>📅 ${a.date?new Date(a.date).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}):''}<br>🕑 ${esc(a.heure)}<br>📍 ${esc(a.lieu)}<br>🤝 avec ${esc(a.avec)}<br>💶 ${esc(a.prix)}</p><br>
+    <a href="#inscription" class="btn" onclick="reserver(${i})">Réserver</a></div>`).join('')
+    :'<p class="sub">Prochains ateliers bientôt annoncés.</p>';
+
+  $('listeForfaits').innerHTML=CFG.forfaits.map(f=>`<div class="card ${f.vedette?'featured':''}">
+    <h3>${esc(f.nom)}</h3><p class="price">${esc(f.prix)}</p>
+    <ul>${f.details.split('\n').filter(x=>x.trim()).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+    <a href="#inscription" class="btn" onclick="$('iForfait').value=this.dataset.f" data-f="${esc(f.nom)}">Choisir</a></div>`).join('');
+
+  $('gallery').innerHTML=CFG.galerie.map(x=>`<figure><img src="${x.src}" alt="${esc(x.posture)}"><figcaption><b>${esc(x.posture)}</b><br>par ${esc(x.prenom)}</figcaption></figure>`).join('');
+
+  const opts=[];CFG.lieux.forEach(l=>l.creneaux.forEach(c=>opts.push(`${l.nom} – ${JOURS[c.jour]} ${hh(c.debut)}-${hh(c.fin)}`)));
+  opts.push('Atelier partagé');
+  $('iCours').innerHTML=opts.map(o=>`<option>${esc(o)}</option>`).join('');
+  $('iForfait').innerHTML=CFG.forfaits.map(f=>`<option>${esc(f.nom)}</option>`).join('');
+  drawFiltres();drawCal();
+}
+function reserver(i){const a=CFG.ateliers[i];$('iCours').value='Atelier partagé';$('iMsg').value=`Atelier : ${a.titre} (${a.date})`;}
+
+let cur=new Date();cur.setDate(1);
+function chgMois(n){cur.setMonth(cur.getMonth()+n);drawCal();}
+function drawCal(){
+  const y=cur.getFullYear(),m=cur.getMonth();
+  $('mois').textContent=cur.toLocaleDateString('fr-FR',{month:'long',year:'numeric'});
+  let h=['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'].map(d=>`<div class="hd">${d}</div>`).join('');
+  const off=(new Date(y,m,1).getDay()+6)%7,nb=new Date(y,m+1,0).getDate();
+  for(let i=0;i<off;i++)h+='<div style="background:transparent"></div>';
+  for(let d=1;d<=nb;d++){
+    const dt=new Date(y,m,d),iso=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const ferme=CFG.vacances.find(v=>v.du&&iso>=v.du&&iso<=(v.au||v.du));
+    let ev='';
+    if(ferme) ev=`<small>🏖️ ${esc(ferme.motif||'Fermé')}</small>`;
+    else CFG.lieux.filter(l=>!MASQUES.has('lieu:'+l.nom)).forEach(l=>l.creneaux.filter(c=>+c.jour===dt.getDay()).forEach(c=>ev+=`<span class="ev" style="background:${l.couleur}">${esc(l.nom)} ${hh(c.debut)}</span>`));
+    if(!MASQUES.has('atelier')) CFG.ateliers.filter(a=>a.date===iso).forEach(a=>ev+=`<span class="ev" style="background:var(--terre)">${esc(a.icone)} ${esc(a.titre)}</span>`);
+    h+=`<div class="${ferme?'off':''}"><b>${d}</b>${ev}</div>`;
+  }
+  $('cal').innerHTML=h;
+}
+
+/* ================= FORMULAIRES PUBLICS ================= */
+$('formInscr').onsubmit=e=>{
+  e.preventDefault();const g=id=>$(id).value;
+  const corps=`Nom : ${g('iNom')}\nE-mail : ${g('iMail')}\nTél : ${g('iTel')}\nCours : ${g('iCours')}\nForfait : ${g('iForfait')}\nNiveau : ${g('iNiv')}\nMessage : ${g('iMsg')}`;
+  $('msgInscr').style.display='block';
+  location.href=`mailto:${CFG.site.email}?subject=${encodeURIComponent('Inscription Yoga – '+g('iNom'))}&body=${encodeURIComponent(corps)}`;
+};
+function compresser(file,cb){
+  const r=new FileReader();r.onload=()=>{const img=new Image();img.onload=()=>{
+    const c=document.createElement('canvas'),k=Math.min(1,700/Math.max(img.width,img.height));
+    c.width=img.width*k;c.height=img.height*k;c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+    cb(c.toDataURL('image/jpeg',.8));};img.src=r.result;};r.readAsDataURL(file);
+}
+$('formPhoto').onsubmit=e=>{
+  e.preventDefault();const f=$('pFile').files[0];if(!f)return;
+  compresser(f,src=>{CFG.attente.push({src,prenom:$('pPrenom').value,posture:$('pPosture').value});
+    enregistrer(true);$('msgPhoto').style.display='block';e.target.reset();});
+};
+
+/* ================= ESPACE ADMINISTRATEUR ================= */
+function enregistrer(silencieux){
+  localStorage.setItem('yogaCfg',JSON.stringify(CFG));renderSite();
+  $('nbAttente').innerHTML=CFG.attente.length?`<span class="badge">${CFG.attente.length}</span>`:'';
+  if(!silencieux){$('toast').style.display='block';clearTimeout(window._t);window._t=setTimeout(()=>$('toast').style.display='none',1500);}
+}
+function fermer(id){$(id).classList.remove('open');}
+function ouvrirAdmin(){
+  if(sessionStorage.getItem('yogaAdmin')){$('ovAdmin').classList.add('open');onglet(window._tab||'general');}
+  else{$('ovLogin').classList.add('open');$('mdp').value='';$('mdp').focus();}
+}
+function connexion(e){
+  e.preventDefault();
+  if($('mdp').value===CFG.site.motdepasse){sessionStorage.setItem('yogaAdmin','1');fermer('ovLogin');ouvrirAdmin();}
+  else alert('Mot de passe incorrect');
+}
+$('side').onclick=e=>{const b=e.target.closest('[data-tab]');if(b)onglet(b.dataset.tab);};
+
+const champ=(lab,path,type='text',extra='')=>{
+  const v=getP(path);
+  if(type==='textarea')return `<div><label>${lab}</label><textarea rows="4" data-p="${path}">${esc(v)}</textarea></div>`;
+  if(type==='jour')return `<div><label>${lab}</label><select data-p="${path}" data-num="1">${JOURS.map((j,i)=>`<option value="${i}" ${+v===i?'selected':''}>${j}</option>`).join('')}</select></div>`;
+  if(type==='checkbox')return `<div><label><input type="checkbox" style="width:auto" data-p="${path}" ${v?'checked':''}> ${lab}</label></div>`;
+  return `<div><label>${lab}</label><input type="${type}" data-p="${path}" value="${esc(v)}" ${extra}></div>`;
+};
+const suppr=path=>`<button class="btn sm rouge" data-del="${path}">🗑 Supprimer</button>`;
+const ajout=(path,lib)=>`<button class="btn sm vert" data-add="${path}">➕ ${lib}</button>`;
+function getP(p){return p.split('.').reduce((o,k)=>o?.[k],CFG);}
+function setP(p,v){const k=p.split('.'),last=k.pop();k.reduce((o,x)=>o[x],CFG)[last]=v;}
+const MODELES={
+  lieux:()=>({nom:"Nouveau lieu",salle:"",adresse:"",region:"",couleur:"#8a5a44",creneaux:[]}),
+  creneaux:()=>({jour:1,debut:"10:00",fin:"11:00"}),
+  apporter:()=>"Nouvel élément",
+  ateliers:()=>({icone:"🧘",titre:"Nouvel atelier",date:"",heure:"",lieu:"",avec:"",prix:""}),
+  forfaits:()=>({nom:"Nouveau forfait",prix:"",details:"",vedette:false}),
+  vacances:()=>({du:"",au:"",motif:""})
+};
+
+function onglet(t){
+  window._tab=t;
+  document.querySelectorAll('#side [data-tab]').forEach(b=>b.classList.toggle('act',b.dataset.tab===t));
+  const s=CFG.site;let h='';
+  if(t==='general'){
+    h=`<h2>🏠 Général</h2><p class="aide">Nom, titre, textes d'accueil et coordonnées.</p><div class="bloc">
+    <div class="row">${champ('Nom de l\'entreprise','site.entreprise')}${champ('Titre du site','site.titre')}${champ('E-mail de contact (reçoit les inscriptions)','site.email','email')}${champ('Téléphone','site.tel')}</div>
+    <div class="row">${champ('Phrase d\'accueil','site.sousTitre','textarea')}${champ('Présentation des cours','site.intro','textarea')}</div></div>
+    <div class="bloc"><label>Photo d'accueil</label><img src="${s.image}" style="width:100%;max-height:180px;object-fit:cover;border-radius:8px;margin:.5rem 0">
+    <input type="file" accept="image/*" data-upload="hero"></div>
+    <div class="bloc"><div class="row">${champ('Mot de passe administrateur','site.motdepasse','text')}</div></div>`;
+  }
+  if(t==='prof'){
+    h=`<h2>👩 Professeure</h2><p class="aide">Encart de présentation affiché en haut du site.</p>
+    <div class="bloc" style="display:grid;grid-template-columns:160px 1fr;gap:1rem;align-items:start">
+      <div><img src="${CFG.prof.photo}" style="width:160px;height:200px;object-fit:cover;border-radius:80px 80px 8px 8px">
+      <label class="btn sm" style="font-weight:400;margin-top:.5rem">📷 Changer la photo<input type="file" accept="image/*" data-upload="prof" hidden></label></div>
+      <div>${champ('Prénom / nom affiché','prof.nom')}<br>${champ('Présentation (sauter une ligne pour un nouveau paragraphe)','prof.texte','textarea')}</div>
+    </div>
+    <div class="bloc"><div class="row">${champ('Citation (laisser vide pour masquer)','prof.citation')}</div>
+    <div class="row">${champ('Formations / spécialités (une par ligne)','prof.formations','textarea')}</div></div>`;
+  }
+  if(t==='lieux'){
+    h=`<h2>📍 Lieux & horaires</h2><p class="aide">Les créneaux alimentent automatiquement le calendrier, ses boutons de filtre, la carte et le formulaire d'inscription.</p>`;
+    CFG.lieux.forEach((l,i)=>{
+      h+=`<div class="bloc"><div class="row">${champ('Commune','lieux.'+i+'.nom')}${champ('Salle','lieux.'+i+'.salle')}${champ('Adresse / code postal','lieux.'+i+'.adresse')}${champ('Département','lieux.'+i+'.region')}${champ('Couleur','lieux.'+i+'.couleur','color')}</div>
+      <label>Créneaux</label>`;
+      l.creneaux.forEach((c,j)=>{const p=`lieux.${i}.creneaux.${j}`;
+        h+=`<div class="row">${champ('Jour',p+'.jour','jour')}${champ('Début',p+'.debut','time')}${champ('Fin',p+'.fin','time')}<div>${suppr(p)}</div></div>`;});
+      h+=`${ajout('lieux.'+i+'.creneaux','Ajouter un créneau')} ${suppr('lieux.'+i)}</div>`;
+    });
+    h+=ajout('lieux','Ajouter un lieu');
+  }
+  if(t==='apporter'){
+    h=`<h2>🧘 À apporter</h2><p class="aide">Liste affichée dans la rubrique Cours.</p><div class="bloc">`;
+    CFG.apporter.forEach((a,i)=>h+=`<div class="ligne"><input data-p="apporter.${i}" value="${esc(a)}">${suppr('apporter.'+i)}</div>`);
+    h+=ajout('apporter','Ajouter un élément')+'</div>';
+  }
+  if(t==='ateliers'){
+    h=`<h2>🎶 Ateliers partagés</h2><p class="aide">Les ateliers apparaissent aussi dans le calendrier à leur date.</p>`;
+    CFG.ateliers.forEach((a,i)=>{const p='ateliers.'+i;
+      h+=`<div class="bloc"><div class="row">${champ('Icône (emoji)',p+'.icone')}${champ('Titre',p+'.titre')}${champ('Date',p+'.date','date')}${champ('Horaire',p+'.heure','text','placeholder="14h00-17h00"')}</div>
+      <div class="row">${champ('Lieu',p+'.lieu')}${champ('Avec (intervenant)',p+'.avec')}${champ('Prix',p+'.prix')}<div>${suppr(p)}</div></div></div>`;});
+    h+=ajout('ateliers','Ajouter un atelier');
+  }
+  if(t==='forfaits'){
+    h=`<h2>💶 Forfaits</h2><p class="aide">Une ligne par avantage dans « Détails ». « Mis en avant » encadre le forfait en doré.</p>`;
+    CFG.forfaits.forEach((f,i)=>{const p='forfaits.'+i;
+      h+=`<div class="bloc"><div class="row">${champ('Nom',p+'.nom')}${champ('Prix',p+'.prix')}${champ('Mis en avant',p+'.vedette','checkbox')}</div>
+      <div class="row">${champ('Détails (une ligne = un point)',p+'.details','textarea')}<div>${suppr(p)}</div></div></div>`;});
+    h+=ajout('forfaits','Ajouter un forfait');
+  }
+  if(t==='vacances'){
+    h=`<h2>🏖️ Fermetures</h2><p class="aide">Pendant ces périodes, les cours réguliers n'apparaissent pas dans le calendrier.</p>`;
+    CFG.vacances.forEach((v,i)=>{const p='vacances.'+i;
+      h+=`<div class="bloc"><div class="row">${champ('Du',p+'.du','date')}${champ('Au',p+'.au','date')}${champ('Motif',p+'.motif')}<div>${suppr(p)}</div></div></div>`;});
+    h+=ajout('vacances','Ajouter une fermeture');
+  }
+  if(t==='galerie'){
+    h=`<h2>📷 Galerie</h2><p class="aide">Validez les photos proposées par les élèves ou ajoutez les vôtres.</p>
+    <div class="bloc"><h3>En attente de validation (${CFG.attente.length})</h3><div class="thumbs">
+    ${CFG.attente.map((x,i)=>`<div><img src="${x.src}"><p><b>${esc(x.posture)}</b><br>${esc(x.prenom)}<br>
+      <button class="btn sm vert" data-valider="${i}">✔ Publier</button> <button class="btn sm rouge" data-del="attente.${i}">✖</button></p></div>`).join('')||'<p>Aucune photo en attente.</p>'}
+    </div></div>
+    <div class="bloc"><h3>Ajouter une photo</h3><div class="row">
+      <div><label>Légende</label><input id="adPost" placeholder="ex : Cours de Thairé"></div>
+      <div><label>Photo</label><input type="file" accept="image/*" data-upload="galerie"></div></div></div>
+    <div class="bloc"><h3>Photos publiées (${CFG.galerie.length})</h3><div class="thumbs">
+    ${CFG.galerie.map((x,i)=>`<div><img src="${x.src}"><p><b>${esc(x.posture)}</b><br>${esc(x.prenom)}<br>${suppr('galerie.'+i)}</p></div>`).join('')}
+    </div></div>`;
+  }
+  if(t==='sauvegarde'){
+    h=`<h2>💾 Sauvegarde & mise en ligne</h2><p class="aide">Vos modifications sont enregistrées dans ce navigateur. Pour les publier, téléchargez le site mis à jour et remplacez le fichier chez votre hébergeur.</p>
+    <div class="bloc"><h3>Publier</h3><p>Télécharge le fichier <b>index.html</b> complet avec toutes vos modifications.</p><br>
+      <button class="btn" data-act="exportSite">⬇ Télécharger le site mis à jour</button></div>
+    <div class="bloc"><h3>Sauvegarde des paramètres</h3><br>
+      <button class="btn vert" data-act="exportJson">⬇ Sauvegarder les paramètres</button>
+      <label class="btn gris" style="font-weight:400">⬆ Restaurer une sauvegarde<input type="file" accept=".json" data-upload="json" hidden></label></div>
+    <div class="bloc"><h3>Autres</h3><br>
+      <button class="btn rouge" data-act="reset">↺ Revenir aux paramètres d'origine</button>
+      <button class="btn gris" data-act="logout">🔓 Se déconnecter</button></div>`;
+  }
+  $('adminBody').innerHTML=h;
+}
+
+$('adminBody').addEventListener('change',e=>{
+  const el=e.target;
+  if(el.dataset.p){setP(el.dataset.p,el.type==='checkbox'?el.checked:el.dataset.num?+el.value:el.value);enregistrer();}
+  if(el.dataset.upload){
+    const f=el.files[0];if(!f)return;
+    if(el.dataset.upload==='json'){const r=new FileReader();r.onload=()=>{try{CFG=JSON.parse(r.result);if(!CFG.prof)CFG.prof=DEFAUT.prof;if(!CFG.site.entreprise)CFG.site.entreprise=DEFAUT.site.entreprise;enregistrer();onglet('sauvegarde');}catch{alert('Fichier invalide');}};r.readAsText(f);return;}
+    compresser(f,src=>{
+      if(el.dataset.upload==='hero')CFG.site.image=src;
+      else if(el.dataset.upload==='prof')CFG.prof.photo=src;
+      else CFG.galerie.unshift({src,prenom:'Cours',posture:$('adPost').value||'Pratique'});
+      enregistrer();onglet(window._tab);});
+  }
+});
+$('adminBody').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.add){const key=b.dataset.add.split('.').pop();getP(b.dataset.add).push(MODELES[key]());enregistrer();onglet(window._tab);}
+  if(b.dataset.del){if(!confirm('Supprimer cet élément ?'))return;const k=b.dataset.del.split('.'),i=+k.pop();getP(k.join('.')).splice(i,1);enregistrer();onglet(window._tab);}
+  if(b.dataset.valider){const x=CFG.attente.splice(+b.dataset.valider,1)[0];CFG.galerie.unshift(x);enregistrer();onglet('galerie');}
+  const a=b.dataset.act;
+  if(a==='exportSite'){
+    const c=document.documentElement.cloneNode(true);
+    c.querySelector('#cfg').textContent='\n'+JSON.stringify(CFG,null,1).replace(/<\//g,'<\\/')+'\n';
+    c.querySelector('#ovAdmin').classList.remove('open');c.querySelector('#adminBody').innerHTML='';
+    telecharger('index.html','<!DOCTYPE html>\n'+c.outerHTML,'text/html');
+  }
+  if(a==='exportJson')telecharger('parametres-yoga.json',JSON.stringify(CFG,null,1),'application/json');
+  if(a==='reset'&&confirm('Effacer toutes les modifications ?')){localStorage.removeItem('yogaCfg');CFG=JSON.parse(JSON.stringify(DEFAUT));enregistrer();}
+  if(a==='logout'){sessionStorage.removeItem('yogaAdmin');fermer('ovAdmin');}
+});
+function telecharger(nom,txt,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type}));a.download=nom;a.click();}
+
+enregistrer(true);
+</script>
+
+
+</body></html>
